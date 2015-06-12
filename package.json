@@ -1,0 +1,32 @@
+{
+  "name": "require-array",
+  "version": "0.0.1",
+  "description": "extend native require to handle array inputs based on node-resolve",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoubin/require-array.git"
+  },
+  "keywords": [
+    "require",
+    "array",
+    "resolve"
+  ],
+  "author": "zoubin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoubin/require-array/issues"
+  },
+  "homepage": "https://github.com/zoubin/require-array#readme",
+  "devDependencies": {
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "resolve": "^1.1.6",
+    "xbind": "^0.4.0",
+    "xglob": "^0.1.2"
+  }
+}
