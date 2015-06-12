@@ -72,12 +72,13 @@ a a
 
 Resolve the path to be required.
 
-### arequire.glob(patterns, opts)
+### arequire.glob(patterns, opts, resolveOpts)
 
 * **patterns**: *String* *Array* patterns to locate files by [xglob](https://www.npmjs.com/package/xglob)
 * **opts**: *Object* *Optional* passed directly to [xglob](https://www.npmjs.com/package/xglob)
+* **resolveOpts**: *Object* *Optional* passed directly to [node-resolve](https://www.npmjs.com/package/resolve)
 
-### arequire.glob.resolve(mods, opts)
+### arequire.glob.resolve(mods, opts, resolveOpts)
 
 Resolve the path to be required.
 
