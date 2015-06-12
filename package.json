@@ -1,6 +1,6 @@
 {
   "name": "require-array",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "extend native require to handle array inputs based on node-resolve",
   "main": "index.js",
   "scripts": {
