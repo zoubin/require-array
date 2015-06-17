@@ -4,18 +4,23 @@ var path = require('path');
 var fs = require('fs');
 var xbind = require('xbind');
 
-test('require.resolve(m)', function(t) {
+test('require.resolve()', function(t) {
     t.same(
-        resolve('resolve', { cwd: path.resolve(__dirname, '../node_modules') })
-        , [require.resolve('resolve')]
+        resolve('resolve'),
+        [require.resolve('resolve')],
+        "should handle string input"
     );
-    t.end();
-});
-
-test('require.resolve([])', function(t) {
     t.same(
-        resolve(['resolve', 'xglob'], { cwd: path.resolve(__dirname, '../node_modules') })
-        , [require.resolve('resolve'), require.resolve('xglob')]
+        resolve(['resolve', 'xglob']),
+        [require.resolve('resolve'), require.resolve('xglob')],
+        "should handle array input"
+    );
+    t.same(
+        resolve('resolve', function () {
+            return require.resolve('xglob');
+        }),
+        [require.resolve('xglob')],
+        "should handle custom resolve"
     );
     t.end();
 });

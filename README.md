@@ -66,7 +66,7 @@ a a
 ### arequire(mods, opts)
 
 * **mods**: *String* *Array* module names or paths to resolve by [node-resolve](https://www.npmjs.com/package/resolve)
-* **opts**: *Object* *Optional* passed directly to [node-resolve](https://www.npmjs.com/package/resolve)
+* **opts**: *Object|Function* *Optional* If *Object*, passed directly to [node-resolve.sync](https://github.com/substack/node-resolve#resolvesyncid-opts). If *Function*, used to resolve the modules like [node-resolve.sync](https://github.com/substack/node-resolve#resolvesyncid-opts)
 
 ### arequire.resolve(mods, opts)
 
@@ -76,7 +76,7 @@ Resolve the path to be required.
 
 * **patterns**: *String* *Array* patterns to locate files by [xglob](https://www.npmjs.com/package/xglob)
 * **opts**: *Object* *Optional* passed directly to [xglob](https://www.npmjs.com/package/xglob)
-* **resolveOpts**: *Object* *Optional* passed directly to [node-resolve](https://www.npmjs.com/package/resolve)
+* **resolveOpts**: *Object|Function* *Optional* If *Object*, passed directly to [node-resolve.sync](https://github.com/substack/node-resolve#resolvesyncid-opts). If *Function*, used to resolve the modules like [node-resolve.sync](https://github.com/substack/node-resolve#resolvesyncid-opts)
 
 ### arequire.glob.resolve(mods, opts, resolveOpts)
 
