@@ -18,6 +18,8 @@ function $resolve(mods, opts) {
         return [].concat(mods)
             .map(xbind(1, opts));
     }
+    opts = opts || {}
+    opts.basedir = opts.basedir || path.dirname(caller());
     return [].concat(mods)
         .map(xbind(1, resolve.sync, opts));
 }
@@ -33,6 +35,16 @@ function gresolve(mods, opts, resolveOpts) {
     if (typeof resolveOpts === 'function') {
         return files.map(xbind(1, resolveOpts));
     }
+    resolveOpts = resolveOpts || {}
+    resolveOpts.basedir = resolveOpts.basedir || path.dirname(caller());
     return files.map(xbind(1, resolve.sync, resolveOpts));
 }
 
+function caller() {
+    // see https://code.google.com/p/v8/wiki/JavaScriptStackTraceApi
+    var origPrepareStackTrace = Error.prepareStackTrace;
+    Error.prepareStackTrace = function (_, stack) { return stack };
+    var stack = (new Error()).stack;
+    Error.prepareStackTrace = origPrepareStackTrace;
+    return stack[2].getFileName();
+}
